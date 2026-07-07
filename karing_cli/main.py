@@ -454,7 +454,8 @@ def connections(ctx, close_all, close_id):
             click.echo()
             for conn in conns[:20]:
                 meta = conn.get("metadata", {})
-                chains = " → ".join(conn.get("chains", []))  # 代理链：如 [urltest_out, A2 香港6...]
+                # 代理链：如 [urltest_out, A2 香港6...]
+                chains = " → ".join(conn.get("chains", []))
                 host = meta.get("host", meta.get("destinationIP", ""))
                 port = meta.get("destinationPort", "")
                 net = meta.get("network", "")
@@ -780,13 +781,16 @@ def guide(ctx):
     click.echo()
     click.secho("方法二：手动设置", bold=True, fg="yellow")
     click.echo("  Step 1: 打开 Karing Dashboard")
-    click.echo(f"    {click.style('open http://127.0.0.1:' + str(settings['html_board_port']), fg='green')}")
+    click.echo(
+        f"    {click.style('open http://127.0.0.1:' + str(settings['html_board_port']), fg='green')}")
     click.echo()
     click.echo("  Step 2: 从浏览器 URL 中复制 secret= 后面的值")
-    click.echo(f"    URL 示例: http://127.0.0.1:{settings['html_board_port']}/?hostname=127.0.0.1&port={settings['control_port']}&secret={click.style('YOUR_SECRET', fg='green', bold=True)}")
+    click.echo(
+        f"    URL 示例: http://127.0.0.1:{settings['html_board_port']}/?hostname=127.0.0.1&port={settings['control_port']}&secret={click.style('YOUR_SECRET', fg='green', bold=True)}")
     click.echo()
     click.echo("  Step 3: 保存 Secret")
-    click.echo(f"    {click.style('karing-cli config set-secret YOUR_SECRET', fg='green')}")
+    click.echo(
+        f"    {click.style('karing-cli config set-secret YOUR_SECRET', fg='green')}")
     click.echo()
     click.echo("  或使用环境变量:")
     click.echo(f"    {click.style('export KARING_SECRET=\"YOUR_SECRET\"', fg='green')}")
