@@ -54,7 +54,17 @@ Karing 默认使用 URLTest（自动选最快）代理组，不支持标准 Clas
 
 ## 安装
 
-### 从 wheel 安装（推荐）
+### 从 PyPI 安装（推荐）
+
+```bash
+pip install karing-cli
+# 或使用 uv（macOS 推荐，绕过系统 Python 限制）
+uv tool install karing-cli
+```
+
+### 从 wheel 安装
+
+从 [CNB 仓库](https://cnb.cool/xiaosicau/karing-cli) 下载 `.whl` 文件后：
 
 ```bash
 pip install karing_cli-0.1.0-py3-none-any.whl
@@ -66,7 +76,7 @@ pip install karing_cli-0.1.0-py3-none-any.whl
 git clone https://cnb.cool/xiaosicau/karing-cli.git
 cd karing-cli
 pip install .
-# 或使用 uv（推荐，绕过 macOS 限制）
+# 或使用 uv
 uv tool install .
 ```
 
