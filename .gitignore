@@ -3,15 +3,7 @@ __pycache__/
 *$py.class
 *.egg-info/
 *.egg
-dist/
-build/
-.eggs/
-*.so
-.env
-.venv/
-venv/
-env/
-*.whl
+
 pip-log.txt
 pip-delete-this-directory.txt
 .tox/
